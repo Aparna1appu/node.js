@@ -3,14 +3,14 @@ pipeline {
     
     environment {
         // Define the Docker image name here for reuse
-        IMAGE_NAME = 'rushikagaraga08/nodeapp'
+        IMAGE_NAME = 'aparna/nodeapp'
     }
 
     stages {
         stage('Checkout Source') {
             steps {
                 // Properly checkout your Git repository
-                git branch: 'main', credentialsId: 'docker-hub', url: 'https://github.com/dhana0803/node.js'
+                git branch: 'master', credentialsId: 'docker-hub', url: 'https://github.com/Aparna1appu/node.js'
             }
         }
         
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     // Login and push the Docker image to Docker Hub
-                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
                         docker.image("${env.IMAGE_NAME}:latest").push()
                     }
                 }
