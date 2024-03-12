@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         // Define the Docker image name here for reuse
-        IMAGE_NAME = 'aparna/nodeapp'
+        IMAGE_NAME = 'aparnakappala/nodeapp'
     }
 
     stages {
